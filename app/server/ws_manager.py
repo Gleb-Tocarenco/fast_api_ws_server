@@ -52,7 +52,7 @@ class WSManager:
 
     async def broadcast(self) -> None:
         while True:
-            await asyncio.sleep(5)
+            await asyncio.sleep(0.01)
             async with channels_lock:
                 for channel, websockets in self.channels.items():
                     item = await self.generator.producer_channels[channel].get()

@@ -17,7 +17,7 @@ class FlowGenerator:
         while True:
             if queue.empty():
                 await queue.put(random.random())
-            await asyncio.sleep(5)
+            await asyncio.sleep(0.1)
 
     def launch(self):
         asyncio.gather(*[self._produce(queue) for queue in self.producer_channels.values()])
